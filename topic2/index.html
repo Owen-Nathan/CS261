@@ -7,17 +7,63 @@
     input{
         margin: 5px;
     }
+    #id {
+        float:right;
+    }
 </style>
+
+ <script src="scripts.js"></script>
 </head>
 <body>
     <h2>Object Creation Functions, Inheritance, Properties, Methods, Instantiation</h2>
 
+<div id="firstPart">
+    <div id="part1">
+            <p>Here we are going to create a "Student" Object. Just enter a Name and Year</p>
+        <label for="name">Name</label><input type="text" id="name" name="name"><br>
+        <label for="year">Year (Junior, Senior, etc)</label><input type="text" id="year" name="year"><br>
+        <button onclick="createStudent();hide('part1');show('part2')">Create Student</button><br>
+    </div>
+    <div id="part2" style="display:none;">
+            <p>Here we are going to create another "Teacher" Object. Just enter a Name and Subject</p>
+        <label for="name2">Name</label><input type="text" id="name2" name="name2"><br>
+        <label for="year2">Subject</label><input type="text" id="subject" name="subject"><br>
+        <button onclick="createTeacher();hide('firstPart');show('secondPart');">Create Teacher</button><br>
+    </div>
+</div>
+<div id="secondPart" style="display:none;">
+    <div id="part3" >
+        <p>Awesome now we have 1 Student and 1 Teacher. Here you can see that they both Have a name and email,
+            but they have other properties as well.
+            Both a Student and a Teacher are considered a "User". This is where the Name, and Email Property come from.
+            </p>
+            <p>Now we are going to change the Grade for our student.</p>
+            <label for="grade">Grade (0-100)</label><input type="number" name="grade" id="grade">
+            <button onclick="updateGrade(); hide('part3'); show('part4')">Change Grade</button>
+    </div>
 
-<H4>Object Creation</H4>
-    <p>Here we are going to create a "Student" Object</p>
+    <div id="part4" style="display:none;">
+            <p>See we can update individual properties of objects. That's pretty cool. In the previous case we used a method named updateGrade to 
+                simply modify the grade property of the student to be what you entered.
+                </p>
+                <p>Now we're going to do a similar change, but this time it will be with our teacher and their subject.</p>
+                <label for="subject">Subject</label><input type="text" name="subject2" id="subject2">
+                <button onclick="updateSubject();hide('secondPart');show('final');">Change Subject</button>
+    </div>
+</div>
 
-<label for="name">Name</label><input type="text" id="name" name="name"><br>
-<label for="year">Year</label><input type="text" id="year" name="year"><br>
-<button onclick="createStudent()">Create Student</button><br>
+<div id="final" style="display: none;">
+    <p>There you go! You may not realize it, but we just used Creation Functions, Inheritance, Properties, Methods, and Instantiation 
+        to create and modify a teacher and student. I sure hope you learned a some more about this topic!.
+    </p>
+    <p>If you would like to look at this code, it can be viewed here:<br>
+        HTML: <a href="https://github.com/Owen-Nathan/CS261/blob/master/topic2/index.html">https://github.com/Owen-Nathan/CS261/blob/master/topic2/index.html</a><br>
+        JS: <a href="https://github.com/Owen-Nathan/CS261/blob/master/topic2/scripts.js">https://github.com/Owen-Nathan/CS261/blob/master/topic2/scripts.js</a><br>
+    </p>
+</div>
+<div>
+    <h3>Output</h3>
+<p id="display"></p>
+</div>
 </body>
 </html>
