@@ -1,0 +1,30 @@
+.basicForm input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 4px;
+    clear: both;
+}
+.basicForm{
+    width: 500px;
+    clear: both;
+}
+
+ button {
+    background-color: #000066;
+    border:none;
+    color:white;
+    padding: 20px 16px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    display: inline-block;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover{
+    background-color: #0000cc;
+}

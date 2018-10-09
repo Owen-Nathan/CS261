@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON Stringify and JSON Parse</title>
+    <script src="scripts.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<h3>Create Javascript Object - <a href="#" id='part1Link' onclick="toggle('partOne','part1Link')">Hide</a> </h3>
+<div id="partOne">
+<div class="basicForm" id="part1">
+First Name: <input type="text" id="firstName" value="Hank"><br>
+Last Name: <input type="text" id="lastName" value="Hill"><br>
+City: <input type="text" id="city" value="Arlen"><br>
+State: <input type="text" id="state" value="Texas"><br>
+    <button onclick="createPersonObject(); show('part2'); show('part3');">Create Person</button>
+</div>
+
+<div id="part2" style="display: none;">
+    <p id="output"></p>
+</div>
+
+<div class="basicForm" id="part3" style="display: none;">
+    <h3>Use Stringify to convert Object to JSON String</h3>
+
+    <button onclick="convertToString('stringOutput','person');show('part4');">Stringify</button>
+</div>
+<div id="part4" style="display: none;">
+    <h3>JSON String Output</h3>
+    <p id="stringOutput"></p>
+    <br>
+    <a href="#" onclick="show('part5');show('part2Head')">Continue</a>
+
+    <hr>
+</div>
+</div>
+<h3 style="display: none;" id="part2Head">Create Javascript Array - <a id='part2Link' href="#" onclick="toggle('partTwo','part2Link')">Hide</a> </h3>
+
+<div id="partTwo">
+<div class="basicForm" id="part5" style="display: none;">
+
+    <h3>Enter 3 Animals</h3>
+    Animal 1: <input type="text" id="animal1" value="Dog"><br>
+    Animal 2: <input type="text" id="animal2" value="Cat"><br>
+    Animal 3: <input type="text" id="animal3" value="Horse"><br>
+    <button onclick="createAnimalArray();show('part6');show('part7');">Create Animal Array</button>
+</div>
+
+<div id="part6" style="display: none;">
+    <p id="animalArrayOutput"></p>
+</div>
+
+<div class="basicForm" id="part7" style="display: none;">
+    <h3>Use Stringify to convert Array to JSON String</h3>
+
+    <button onclick="convertToString('arrayStringOutput','animalArray');show('part8')">Stringify</button>
+</div>
+
+<div id="part8" style="display: none;">
+    <h3>JSON String Output</h3>
+    <p id="arrayStringOutput"></p>
+    <a href="#" onclick="show('part9');show('part3Head')">Continue</a>
+<hr>
+</div>
+</div>
+<h3 style="display: none;" id="part3Head">JSON Parsing - Object - <a id='part3Link' href="#" onclick="toggle('partThree','part23ink')">Hide</a> </h3>
+
+<div id="partThree">
+<div class="basicForm" id="part9" style="display: none;">
+    <h4>Enter in a JSON String for a Javascript Object.</h4>
+    <textarea id="jsonOBJString" rows="5" cols="40"></textarea>
+    <button onclick="parseJSON('jsonOBJString','jsonParseOutput');show('part10')">Parse</button>
+</div>
+
+<div id="part10" style="display: none;">
+    <p id="jsonParseOutput"></p>
+    <a href="#" onclick="show('part11')">Continue</a>
+    <hr>
+</div>
+
+
+<div class="basicForm" id="part11" style="display: none;">
+    <h3>JSON Parsing - Object</h3>
+    <h4>Enter in a JSON String for a Javascript Object.</h4>
+    <textarea id="jsonArrayString" rows="5" cols="40"></textarea>
+    <button onclick="parseJSON('jsonArrayString','jsonArrayParseOutput');show('part12')">Parse</button>
+</div>
+
+<div id="part12" style="display: none;">
+    <p id="jsonArrayParseOutput"></p>
+</div>
+</div>
+
+</body>
+</html>
