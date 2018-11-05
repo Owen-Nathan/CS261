@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Local Storage API, Storing and Retrieving Simple Data, Arrays, Associative Arrays, and Objects </title>
+    <script src="scripts.js"></script>
+</head>
+<body onload="retrieveData()">
+
+<h2>Local Storage API, Storing and Retrieving Simple Data, Arrays, Associative Arrays, and Objects  </h2>
+<p>If you would like to look at this code, it can be viewed here:<br>
+    HTML: <a href="https://github.com/Owen-Nathan/CS261/blob/master/topic5/index.html">https://github.com/Owen-Nathan/CS261/blob/master/topic5/index.html</a><br>
+    JS: <a href="https://github.com/Owen-Nathan/CS261/blob/master/topic5/scripts.js">https://github.com/Owen-Nathan/CS261/blob/master/topic5/scripts.js</a><br>
+</p>
+
+<div id="basicSaveForm">
+<h3>Enter basic information below. Here in a moment I'll show you something awesome!</h3>
+<label for="firstName">First Name</label><input id="firstName" type="text" name="firstName"/><span id="firstNameOutput"></span> <br>
+<label for="lastName">Last Name</label><input id="lastName" type="text" name="lastName"/><span id="lastNameOutput"></span> <br>
+</div>
+
+<div id="saveRest">
+    <h3>List your three favorite sports</h3>
+    <span id="sportsOutput"></span>
+    Sport 1: <input type="text" id="sport1" ><br>
+    Sport 2: <input type="text" id="sport2" ><br>
+    Sport 3: <input type="text" id="sport3" ><br>
+
+    <h3>What's your name again?</h3>
+    <span id="studentOutput"></span>
+    <label for="name">Name</label><input type="text" id="name"><br>
+
+    <h3>List some classes you're taking</h3>
+    Class 1: <input type="text" id="class1" ><br>
+    Class 2: <input type="text" id="class2" ><br>
+    Class 3: <input type="text" id="class3" ><br>
+
+
+
+    <button onclick="createSportsArray();createStudent();saveData();show('refreshPage')">Save</button>
+</div>
+
+<h3 id="refreshPage" style="display: none;">Now refresh the page and watch the magic happen!</h3>
+
+
+</body>
+</html>
