@@ -28,12 +28,36 @@ function createSportsArray() {
     sports[1] = a2;
     sports[2] = a3;
 
-    document.getElementById("output2").innerHTML =
-        "<h4>Sports Array</h4>" +
-        "sports[0] = " + sports[0] + "<br>" +
-        "sports[1] = " + sports[1] + "<br>" +
-        "sports[2] = " + sports[2] + "<br>";
+    let sportsOutput = "";
+
+    console.log(sports);
+    sports.forEach(sport=> {
+       sportsOutput += sport + "<br>";
+       console.log(sport);
+    })
+
+    document.getElementById("output2").innerHTML = sportsOutput;
     } else {
         document.getElementById("output2").innerHTML = "Well I wanted to show you an array, but you decided to not play along :(";
     }
+}
+
+function startCounter() {
+    let countTo = document.getElementById('countTo').value;
+
+    let tick = 0;
+    while(tick < countTo) {
+        tick++;
+        document.getElementById('output3').innerHTML += tick + "<br>";
+    }
+}
+
+function multiplier() {
+    let startingNumber = document.getElementById('startingNumber').value;
+    let newNumber = startingNumber
+    document.getElementById('output4').innerHTML = "";
+    do{
+        document.getElementById('output4').innerHTML +=
+            newNumber + " * 2 = " + (newNumber *= 2) + "<br>";
+    } while (newNumber <= 100);
 }
