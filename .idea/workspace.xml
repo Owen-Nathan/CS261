@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a6c8256f-090c-48e3-b9e1-d4641f351425" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/topic8/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/topic8/scripts.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/topic8/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,28 +24,28 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="3" />
-          <entry key="html" value="17" />
+          <entry key="html" value="18" />
           <entry key="js" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="3" />
-          <entry key="HTML" value="17" />
+          <entry key="HTML" value="18" />
           <entry key="JavaScript" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="981" />
-          <entry key="html" value="5835" />
+          <entry key="html" value="5839" />
           <entry key="js" value="6673" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="981" />
-          <entry key="HTML" value="5836" />
+          <entry key="HTML" value="5840" />
           <entry key="JavaScript" value="6672" />
         </counts>
       </usages-collector>
@@ -65,7 +62,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/topic8/styles.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="969">
@@ -79,6 +76,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="289">
               <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -112,10 +118,10 @@
         <option value="$PROJECT_DIR$/topic6/scripts.js" />
         <option value="$PROJECT_DIR$/topic7/scripts.js" />
         <option value="$PROJECT_DIR$/topic7/index.html" />
-        <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/topic8/index.html" />
         <option value="$PROJECT_DIR$/topic8/scripts.js" />
         <option value="$PROJECT_DIR$/topic8/styles.css" />
+        <option value="$PROJECT_DIR$/index.html" />
       </list>
     </option>
   </component>
@@ -200,18 +206,18 @@
       <workItem from="1540073494302" duration="5000" />
       <workItem from="1540519796953" duration="1776000" />
       <workItem from="1541363492214" duration="10000" />
-      <workItem from="1541450771242" duration="10974000" />
+      <workItem from="1541450771242" duration="11006000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20087000" />
+    <option name="totallyTimeSpent" value="20119000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="2575" height="1415" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.22584493" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22584493" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -353,13 +359,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="7" lean-forward="true" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/topic1/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
@@ -392,6 +391,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="969">
           <caret line="57" lean-forward="true" selection-start-line="57" selection-end-line="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
         </state>
       </provider>
     </entry>
