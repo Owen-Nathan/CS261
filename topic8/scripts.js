@@ -16,3 +16,13 @@ function play() {
         playing = true;
     }
 }
+
+function transition() {
+
+    let square = document.getElementById('square');
+    square.style.width = '300px';
+    square.style.height = '150px';
+    square.style.backgroundColor = 'blue';
+
+
+}
