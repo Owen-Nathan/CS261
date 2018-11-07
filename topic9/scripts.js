@@ -52,3 +52,31 @@ function updateButton() {
     button.disabled = false;
 
 }
+
+var transitioned = false;
+function updateTransitionButton() {
+    let button = document.getElementById('transitionButton');
+    button.innerText = 'Play';
+    button.disabled = false;
+    transitioned = true;
+}
+
+
+function transition() {
+    let square = document.getElementById('square2');
+
+    let button = document.getElementById('transitionButton');
+    button.innerText = 'Transitioning';
+    button.disabled = true;
+
+    square.addEventListener('transitionend', updateTransitionButton);
+    if(transitioned) {
+        square.style.width = '50px';
+        square.style.height = '50px';
+        square.style.backgroundColor = 'yellow';
+    } else {
+        square.style.width = '300px';
+        square.style.height = '150px';
+        square.style.backgroundColor = 'blue';
+    }
+}
