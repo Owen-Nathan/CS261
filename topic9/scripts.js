@@ -1,18 +1,54 @@
-
-var playing = false;
-
-function play() {
-    if(playing) {
-        document.getElementById('playPauseButton').innerText = 'Play';
-        document.getElementById('sunMovement').style.animationPlayState = 'paused';
-        document.getElementById('sky').style.animationPlayState = 'paused';
-
-        playing = false;
-    } else {
-        document.getElementById('playPauseButton').innerText = 'Pause';
-        document.getElementById('sunMovement').style.animationPlayState = 'running';
-        document.getElementById('sky').style.animationPlayState = 'running';
-
-        playing = true;
+function changed() {
+    let color = document.getElementById('paragraphChange').value;
+    let paragraphs = document.getElementsByClassName('paragraph');
+    for(let i = 0; i < paragraphs.length; i++) {
+        paragraphs[i].style.color = color;
     }
+}
+function countCharacters() {
+    let characterCount = document.getElementById('simpleText').value.length;
+    document.getElementById('characterCount').innerText = "Characters: " + characterCount;
+}
+
+function loaded() {
+    alert("Hello! This was run by the onload function!");
+}
+
+function mousedOver() {
+    document.getElementById('mouseOverOutParagraph').innerHTML = "Hey you moused over me :) Now move your mouse away!"
+}
+
+function mousedOut() {
+    document.getElementById('mouseOverOutParagraph').innerHTML = "Hey Mouse over me!";
+}
+
+function clicked() {
+    document.getElementById('clickedParagraph').innerHTML = "Yay! You clicked me!";
+}
+
+function touched() {
+    document.getElementById('touchParagraph').innerHTML = "Hey you touched me :) Now stop it!"
+}
+
+function untouched() {
+    document.getElementById('touchParagraph').innerHTML = "Hey Touch Me!";
+}
+
+function playAnimation() {
+    let animation = document.getElementsByClassName('animate')[0];
+    animation.addEventListener('webkitAnimationEnd',updateButton);
+    animation.addEventListener('animationend', updateButton);
+
+    let button = document.getElementById('toggleButton');
+
+    button.innerText = 'Playing';
+    button.disabled = true;
+    document.getElementsByClassName('animate')[0].style.animationPlayState = 'running';
+}
+
+function updateButton() {
+    let button = document.getElementById('toggleButton');
+    button.innerText = 'Play';
+    button.disabled = false;
+
 }

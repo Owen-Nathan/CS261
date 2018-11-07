@@ -2,23 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Creating CSS3 Transitions and Animations in CSS and triggering them with JavaScript </title>
-    <link href="styles.css" rel="stylesheet">
+    <title>Standard JavaScript Events Including those for Mobile Devices</title>
+    <script src="scripts.js"></script>
+    <link rel="stylesheet" href="styles.css">
+
 </head>
-<body>
-<h2>Creating CSS3 Transitions and Animations in CSS and triggering them with JavaScript </h2>
+<body onload="loaded()">
+<h2>Standard JavaScript Events Including those for Mobile Devices</h2>
 <p>If you would like to look at this code, it can be viewed here:<br>
-    HTML: <a href="https://github.com/Owen-Nathan/CS261/blob/master/topic8/index.html">https://github.com/Owen-Nathan/CS261/blob/master/topic8/index.html</a><br>
-    JS: <a href="https://github.com/Owen-Nathan/CS261/blob/master/topic8/scripts.js">https://github.com/Owen-Nathan/CS261/blob/master/topic8/scripts.js</a><br>
+    HTML: <a href="https://github.com/Owen-Nathan/CS261/blob/master/topic9/index.html">https://github.com/Owen-Nathan/CS261/blob/master/topic9/index.html</a><br>
+    JS: <a href="https://github.com/Owen-Nathan/CS261/blob/master/topic9/scripts.js">https://github.com/Owen-Nathan/CS261/blob/master/topic9/scripts.js</a><br>
 </p>
 
-<script src="scripts.js"></script>
-<button id="playPauseButton" onclick="play()">Play</button>
-<div class="animateSky" id="sky">
-    <div class="animate" id="sunMovement">
-    <div class="animate" id="circularObject"></div>
-    </div>
+<p onmouseover="mousedOver()" onmouseout="mousedOut()" id="mouseOverOutParagraph">Hey Mouse over me!</p>
+<p onclick="clicked()" id="clickedParagraph">Click Me! Click Me!</p>
+
+<!--We use the onkeyup function in this case because we want to know how many characters are in the text box after a character has been typed.
+    Key down runs right when the key is pressed, keyup runs once the key has been released, which is also the same time the character appears in the textbox -->
+<label for="simpleText">Enter some text</label><input id="simpleText" type="text" onkeyup="countCharacters()"> <span id="characterCount"></span>
+
+<p class="paragraph">Select an item below</p>
+<select onchange="changed()" id="paragraphChange">
+    <option value="black">Pick a new font color</option>
+    <option value="blue">Blue</option>
+    <option value="green">Green</option>
+    <option value="purple">Purple</option>
+    <option value="red">Red</option>
+</select>
+
+<h4>Mobile Goodies</h4>
+<p ontouchstart="touched()" ontouchend="untouched()" id="touchParagraph">Hey Touch Me!</p>
+
+<h4>Animation Stuff</h4>
+<button onclick="playAnimation()" id="toggleButton">Play</button>
+<div>
+    <div id="square" class="animate"></div>
 </div>
-<div id="ground"></div>
 </body>
 </html>

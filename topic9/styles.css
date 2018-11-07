@@ -1,84 +1,34 @@
+#square {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+}
+
 .animate {
-    animation-play-state: paused;
+    -webkit-animation-name: animation;
+    -moz-animation-name: animation;
+    -o-animation-name: animation;
     animation-name: animation;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
+
+    animation-duration: 5s;
+
+    animation-play-state: paused;
 }
 
 @keyframes animation {
-    from {
-        transform: rotate(0);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-
-
-}
-
-@keyframes animation2 {
-    0% {
-        background-color: black;
-    }
-
-    15% {
-        background-color: skyblue;
-    }
-
     25% {
-        background-color: orange;
+        background-color: blue;
     }
-    30% {
-        background-color:  black;
+
+    50% {
+        background-color:yellow;
+    }
+
+    75% {
+        background-color: purple;
     }
 
     100% {
-        background-color: black;
+        background-color: green;
     }
-
-}
-
-
-
-.animateSky {
-    animation-play-state: paused;
-    animation-name: animation2;
-    animation-duration: 10s;
-    animation-iteration-count: infinite;
-}
-
-
-#sky {
-    width: 100%;
-    height: 500px;
-    background-color: skyblue;
-    z-index: 0;
-    position: relative;
-}
-
-#sunMovement {
-    width: 65%;
-    height: 100px;
-    position: relative;
-    bottom: -600px;
-    margin: auto;
-}
-#circularObject {
-    height: 75px;
-    width: 75px;
-    background-color: yellow;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    border-radius: 50%;
-    display: inline-block;
-    z-index: 1;
-    position: relative;
-}
-
-#ground {
-    width: 100%;
-    height: 500px;
-    background-color: darkgreen;
-    z-index: 2;
-    position: relative;
 }
