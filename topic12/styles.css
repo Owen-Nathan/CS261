@@ -1,0 +1,53 @@
+.square {
+    width: 70px;
+    height: 50px;
+    background-color: red;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    transition: all 1s;
+}
+
+#transforms {
+    margin-left: 50px;
+}
+#translate:active{
+    -webkit-transform: translate(85px,-75px);
+    -moz-transform: translate(85px,-75px);
+    -ms-transform: translate(85px,-75px);
+    -o-transform: translate(85px,-75px);
+    transform: translate(85px,-75px);
+}
+
+#rotate:hover {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+#scale:hover {
+    -webkit-transform: scale(2,2);
+    -moz-transform: scale(2,2);
+    -ms-transform: scale(2,2);
+    -o-transform: scale(2,2);
+    transform: scale(2,2);
+}
+
+#skew:hover {
+    -webkit-transform: skew(20deg,5deg);
+    -moz-transform: skew(20deg,5deg);
+    -ms-transform: skew(20deg,5deg);
+    -o-transform: skew(20deg,5deg);
+    transform:skew(20deg,5deg);
+}
+
+#matrix:active {
+    -webkit-transform: matrix(3, 10, 5, 1.5, 100, 150);
+    -moz-transform: matrix(3, 10, 5, 1.5, 100, 150);
+    -ms-transform: matrix(3, 10, 5, 1.5, 100, 150);
+    -o-transform: matrix(3, 10, 5, 1.5, 100, 150);
+    transform: matrix(3, 10, 5, 1.5, 100, 150);
+}

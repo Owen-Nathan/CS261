@@ -1,0 +1,53 @@
+nav {
+    width: 800px;
+    height: 50px;
+    display: block;
+}
+nav ul {
+    list-style-type: none;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+nav li {
+    float: left;
+    background-color: blue;
+    padding: 15px;
+    margin: 0 5px 0 5px;
+    color: white;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+
+    height:50px;
+}
+
+#home:hover {
+    background-color: red;
+    color: white;
+    height: 150px;
+}
+
+#about:hover {
+    background-color:green;
+    color:black;
+}
+
+#home {
+    -webkit-transition: all 2s;
+    transition: all 2s;
+}
+
+#about {
+    -webkit-transition: background-color 500ms, color 500ms;
+    transition: background-color 500ms, color 500ms;
+}
+
+#contact {
+    width: 100px;
+    -webkit-transition: all 3s ease-in-out;
+    transition:  all 3s ease-in-out;
+}
+
+#contact:hover {
+    width: 400px;
+}
