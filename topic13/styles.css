@@ -1,0 +1,68 @@
+div {
+    width:100px;
+    height:100px;
+    margin: 5px;
+    position:relative;
+    left: 0;
+}
+
+#animationOne {
+    background-color: red;
+    animation: animation1 5s normal infinite;
+}
+
+@keyframes animation1  {
+    25% {left: 50px;background-color:yellow;}
+    50% {left:100px; background-color: orange;}
+    75% {left:150px;background-color: purple;}
+    100% {left:200px; background-color:salmon;}
+}
+
+#animationTwo {
+    background-color: blue;
+    animation: animation2 5s reverse infinite;
+}
+
+@keyframes animation2 {
+    25% {transform: rotate(90deg);background-color: tan;left:25px;}
+    50% {transform: rotate(180deg);background-color: crimson;left:75px;}
+    75% {transform: rotate(270deg);background-color: lightpink;left:125px;}
+    100% {transform: rotate(360deg);background-color: greenyellow;left:175px;}
+}
+
+#animationThree {
+    background-color: green;
+    animation: animation3 5s alternate infinite;
+    left:300px;
+
+}
+
+@keyframes animation3 {
+    5% {transform:scale(1.1,1.1);}
+    15% {transform:scale(1.3,1.3);}
+    30% {transform:scale(1.5,1.5);}
+    45% {transform:scale(1.7,1.7);}
+    65% {transform:scale(1.8,1.8);}
+    85% {transform:scale(1.9,1.9); background-color:orange;}
+    100% {transform:scale(2,2); background-color:red;}
+}
+
+#animationFour {
+    background-color: black;
+    animation: animation4 5s alternate-reverse infinite;
+}
+@keyframes animation4 {
+    25% {
+        border-radius:100%;
+        background-color:violet;
+    }
+    50% {
+        border-radius:75%;
+        background-color:darkviolet;
+    }
+    75% {
+        border-radius: 50%;
+        background-color:mediumvioletred;
+    }
+    100% {border-radius:25%;background-color:yellow}
+}

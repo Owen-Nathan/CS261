@@ -18,9 +18,7 @@
     -moz-animation-name: animation;
     -o-animation-name: animation;
     animation-name: animation;
-
     animation-duration: 5s;
-
     animation-play-state: paused;
 }
 
