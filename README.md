@@ -24,3 +24,5 @@
 [Topic 11](https://owen-nathan.github.io/CS261/topic11/index.html)
 
 [Topic 12](https://owen-nathan.github.io/CS261/topic12/index.html)
+
+[Topic 13](https://owen-nathan.github.io/CS261/topic13/index.html)
