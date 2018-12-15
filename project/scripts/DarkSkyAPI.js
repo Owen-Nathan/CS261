@@ -17,6 +17,7 @@ function getForecast(coordinates) {
         if(this.readyState === 4 && this.status === 200) {
             weatherData = JSON.parse(Http.responseText);
             getCurrentConditions();
+            getHourlyForecast();
         }
     }
 }
@@ -76,13 +77,26 @@ function getSevenDayForecast() {
 
 }
 
+/*
+            <div class="conditionItem">
+                <span class="hourLabel">7 PM</span>
+                <span class="tempLabel">30&deg;F</span>
+                <i class="hourlyIcon wi wi-rain"></i>
+            </div>
+            <span>Feels Like: ${hour.apparentTemperature}&deg;F</span>
+                             <span>Wind: ${hour.windSpeed} ${calculateDirection(hour.windBearing)}</span>
+                             <span>Precip: ${(hour.precipProbability * 100).toFixed(0)}%</span><br>
+ */
 function getHourlyForecast() {
     let hourly = weatherData.hourly;
     hourly.data.forEach(function(hour) {
-       let hourlyDivRow = document.getElementById("hourlyConditionsRow");
+       let hourlyDivRow = document.getElementById("hourlyConditions");
         let hourRow = document.createElement("div");
-        hourRow.className = "hourlyConditionItem";
-        hourRow.innerHTML = `<span>${getTime(hour.time)}</span> - <span>${hour.temperature}&deg;F</span> <span>Feels Like: ${hour.apparentTemperature}&deg;F</span> <span>Wind: ${hour.windSpeed} ${calculateDirection(hour.windBearing)}</span> <span>Precip: ${(hour.precipProbability * 100).toFixed(0)}%</span><br>`;
+        hourRow.className = "conditionItem";
+        hourRow.innerHTML = `<span class="hourLabel">${getTime(hour.time)}</span>
+                             <span class="tempLabel">${hour.temperature.toFixed(0)}&deg;F</span>
+                             <i class="hourlyIcon wi wi-${getConditionIcon(hourly.icon)}"></i>
+                             <span class="hourPrecip">${(hour.precipProbability * 100).toFixed(0)} <i class="wi wi-humidity"/></span>`;
         hourlyDivRow.appendChild(hourRow);
     });
 

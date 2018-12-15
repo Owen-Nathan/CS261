@@ -34,10 +34,52 @@
     height: 25%;
 }
 
+#hourlyRow {
+    height:25%;
+    margin: 0 15px;
+}
 #additionalCurrentRow {
     height: 10%;
 }
 
+#hourlyConditions {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    height: 100%;
+}
+
+.hourlyIcon {
+    font-size: 25px;
+    padding-top: 20%;
+}
+.conditionItem {
+    flex: 0 0 auto;
+    border: 1px solid;
+    width: 19%;
+    text-align: center;
+    height: 95%;
+    margin-bottom: 5px;
+}
+.hourLabel {
+    background-color: black;
+    color: white;
+    display: block;
+    width: 100%;
+    height:12%;
+}
+.tempLabel {
+    display: block;
+    padding-top: 15%;
+    font-size: 18px;
+}
+
+.hourPrecip {
+    display: block;
+    padding-top: 15%;
+    font-size: 15px;
+}
 hr{
     margin-top: 15px;
     margin-bottom: 15px;
