@@ -41,13 +41,25 @@ function getCurrentConditions() {
 }
 
 function setMainDisplay(weatherInfo) {
-    document.getElementById('currentTemp').innerHTML = weatherInfo.temp;
-    document.getElementById('currentFeelsLike').innerHTML = weatherInfo.feelslike;
-    document.getElementById('currentIcon').className = weatherInfo.icon;
-    document.getElementById('currentWindSpeed').innerHTML = weatherInfo.wind;
-    document.getElementById('currentLowHigh').innerHTML = weatherInfo.lowHigh;
-    document.getElementById('currentPrecip').innerText = weatherInfo.precip;
-    document.getElementById('currentSummary').innerText = weatherInfo.summary;
+    let currentTempElement = document.getElementById('currentTemp');
+    var animatedTexts = document.querySelectorAll('.main');
+    animatedTexts.forEach(function(animatedText) {
+        animatedText.classList.add('pre-animation');;
+    });
+
+
+    setTimeout(function() {
+        animatedTexts.forEach(function(animatedText) {
+            animatedText.classList.remove('pre-animation');
+        });
+        currentTempElement.innerHTML = weatherInfo.temp;
+        document.getElementById('currentFeelsLike').innerHTML = weatherInfo.feelslike;
+        document.getElementById('currentIcon').className = weatherInfo.icon + ' animated main';
+        document.getElementById('currentWindSpeed').innerHTML = weatherInfo.wind;
+        document.getElementById('currentLowHigh').innerHTML = weatherInfo.lowHigh;
+        document.getElementById('currentPrecip').innerText = weatherInfo.precip;
+        document.getElementById('currentSummary').innerText = weatherInfo.summary;
+    },1000)
 }
 function calculateDirection(bearing){
     if(bearing > 330 && bearing <= 15)
@@ -89,19 +101,26 @@ function getConditionIcon(icon) {
 
 function getSevenDayForecast() {
     let daily = weatherData.daily;
-
-    daily.data.forEach(function(day) {
+    let dailyForecastRow = document.getElementById("dailyForecasts");
+    dailyForecastRow.classList.add('pre-animation');
+    daily.data.forEach(function(day,index,array) {
         let low = day.temperatureLow.toFixed(0);
         let high = day.temperatureHigh.toFixed(0);
-        let hourlyDivRow = document.getElementById("dailyForecasts");
         let dayRow = document.createElement("div");
 
         dayRow.className = "forecastItem flexItem";
         dayRow.innerHTML = `<span class="dayLabel blackBackground">${getDay(day.time)}</span>
                              <span class="dayTempLabel">${low}&deg;F <i class="wi wi-direction-down"></i> ${high}&deg;F <i class="wi wi-direction-up"></i></span>
                              <i class="hourlyIcon wi wi-${getConditionIcon(day.icon)}"></i>`;
-        hourlyDivRow.appendChild(dayRow);
+        dailyForecastRow.appendChild(dayRow);
     });
+
+    setTimeout(function() {
+        dailyForecastRow.classList.remove('pre-animation');
+
+    },1000)
+
+
 }
 
 /*
@@ -136,7 +155,7 @@ function getHourlyForecast() {
         hourRow.className = "conditionItem flexItem";
         hourRow.innerHTML = `<span class="hourLabel blackBackground">${getTime(hour.time)}</span>
                              <span class="tempLabel">${hour.temperature.toFixed(0)}&deg;F</span>
-                             <i class="hourlyIcon wi wi-${getConditionIcon(hourly.icon)}"></i>
+                             <i class="hourlyIcon wi wi-${getConditionIcon(hour.icon)}"></i>
                              <span class="hourPrecip">${(hour.precipProbability * 100).toFixed(0)} <i class="wi wi-humidity"></i></span>
                              <span class="hourPrecip"><i class="wi wi-wind towards-${hour.windBearing}-deg"></i> ${hour.windSpeed.toFixed(0)}<br>mph</span>`;
         hourlyDivRow.appendChild(hourRow);

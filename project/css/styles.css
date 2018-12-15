@@ -45,6 +45,16 @@
     height: 10%;
 }
 
+.animated {
+    transition: all 1s;
+    max-height: 300px;
+    opacity: 1;
+}
+
+.pre-animation {
+    opacity: 0;
+    max-height: 0;
+}
 .scrollingContent {
     display: flex;
     flex-wrap: nowrap;
