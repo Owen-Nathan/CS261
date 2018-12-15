@@ -26,9 +26,9 @@ function getCurrentConditions() {
     let low = weatherData.daily.data[0].temperatureLow.toFixed(0);
     let high = weatherData.daily.data[0].temperatureHigh.toFixed(0);
     document.getElementById('currentTemp').innerHTML = `${current.temperature.toFixed(0)}&deg;F`;
-   // document.getElementById('').innerHTML = `Feels Like: ${current.apparentTemperature}&deg;F`;
+   document.getElementById('currentFeelsLike').innerHTML = `${current.apparentTemperature.toFixed(0)}&deg;F`;
     document.getElementById('currentIcon').className = `wi wi-${getConditionIcon(current.icon)}`;
-    //document.getElementById('windSpeed').innerText = `Wind: ${current.windSpeed} ${calculateDirection(current.windBearing)}`;
+    document.getElementById('currentWindSpeed').innerText = `${current.windSpeed.toFixed(0)} MPH`;
     document.getElementById('currentLowHigh').innerHTML = `${low}&deg;F / ${high}&deg;F`;
     document.getElementById('currentPrecip').innerText = `${current.precipProbability * 100}%`;
     document.getElementById('currentSummary').innerText = current.summary;
@@ -55,16 +55,23 @@ function calculateDirection(bearing){
 
 function getConditionIcon(icon) {
     switch(icon) {
-        case 'clear-day':
-            return 'day-sunny';
-        case 'partly-cloudy-day':
-            return 'day-cloudy';
-        case 'partly-cloudy-night':
-            return 'night-cloudy';
-        default:
-            return 'tornado';
+        case 'clear-day': return 'day-sunny';
+        case 'clear-night': return 'night-clear';
+        case 'rain': return 'rain';
+        case 'snow': return 'snow';
+        case 'sleet': return 'sleet';
+        case 'wind': return "strong-wind";
+        case 'fog': return "fog";
+        case 'cloudy': return "cloudy";
+        case 'partly-cloudy-day': return "day-cloudy";
+        case 'partly-cloudy-night': return "night-cloudy";
+        case 'hail': return "hail";
+        case 'thunderstorm': return "thunderstorm";
+        case 'tornado': return "tornado";
     }
 }
+
+
 function getSevenDayForecast() {
 
 }

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/weather-icons-wind.min.css">
     <link rel="stylesheet" href="css/weather-icons.min.css">
 </head>
-<body onload="getCurrentLocation()">
+<body onload="getCurrentConditions()">
 <div class="headerBar">
     <span id="locationName">Current Location</span>
 </div>
@@ -28,11 +28,11 @@
     </div>
     <div id="additionalCurrentRow">
         <div class="half left centerText" id="leftSideFeelsLike">
-            <span class="boldInformation" id="currentFeelsLike">29&deg;F</span>
+            <span class="mediumInformation" id="currentFeelsLike">29&deg;F</span>
             <span class="subInformation">Feels Like</span>
         </div>
-        <div id="rightSideWind">
-            <span class="boldInformation" id="currentWindSpeed">3 MPH</span>
+        <div class="half right centerText" id="rightSideWind">
+            <span class="mediumInformation" id="currentWindSpeed">3 MPH</span>
             <span class="subInformation">Wind</span>
         </div>
     </div>

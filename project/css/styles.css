@@ -13,6 +13,12 @@
     display: block;
 }
 
+.mediumInformation {
+    font-size :35px;
+    font-weight: bold;
+    display: block;
+}
+
 .subInformation {
     padding-top: 5px;
     font-size:20px;
@@ -26,6 +32,10 @@
 }
 #topRow {
     height: 25%;
+}
+
+#additionalCurrentRow {
+    height: 10%;
 }
 
 hr{
