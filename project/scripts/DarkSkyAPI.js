@@ -135,8 +135,12 @@ function getSevenDayForecast() {
  */
 function getHourlyForecast() {
     let hourly = weatherData.hourly;
+    let hourlyDivRow = document.getElementById("hourlyConditions");
+    hourlyDivRow.classList.add('pre-animation');
+
     hourly.data.forEach(function(hour) {
-       let hourlyDivRow = document.getElementById("hourlyConditions");
+
+
         let hourRow = document.createElement("div");
 
         hourRow.onclick = function()
@@ -161,6 +165,10 @@ function getHourlyForecast() {
         hourlyDivRow.appendChild(hourRow);
     });
 
+    setTimeout(function() {
+        hourlyDivRow.classList.remove('pre-animation');
+
+    },1000)
 }
 
 function getTime(unixTimestamp) {
