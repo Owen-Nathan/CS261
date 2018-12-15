@@ -36,11 +36,9 @@
 
 #hourlyRow {
     height:25%;
-    margin: 0 15px;
 }
 #forecastRow {
     height: 15%;
-    margin:  15px;
     padding-top: 15%;
 }
 #additionalCurrentRow {
@@ -96,7 +94,7 @@
 .dayLabel {
     display: block;
     width: 100%;
-    height:15%;
+    height:17%;
 }
 
 .dayTempLabel {
