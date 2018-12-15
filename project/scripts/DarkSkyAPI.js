@@ -13,18 +13,23 @@ function getForecast(coordinates) {
 
     Http.onreadystatechange = function () {
         if(this.readyState === 4 && this.status === 200) {
-            console.log(Http.responseText);
+            weatherData = JSON.parse(Http.responseText);
+            getCurrentConditions();
         }
     }
 }
 function getCurrentConditions() {
 //This includes Temperature, Feels like (windchill), precipitation, wind speed and direction,humidity
     let current = weatherData.currently;
-    document.getElementById('currentTemperature').innerHTML = `${current.temperature}&deg;F`;
-    document.getElementById('feelsLike').innerHTML = `Feels Like: ${current.apparentTemperature}&deg;F`;
-    document.getElementById('windSpeed').innerText = `Wind: ${current.windSpeed} ${calculateDirection(current.windBearing)}`;
-    document.getElementById('precipitation').innerText = `Precip: ${current.precipProbability * 100}%`;
-    document.getElementById('summary').innerText = current.summary;
+    let low = weatherData.daily.data[0].temperatureLow.toFixed(0);
+    let high = weatherData.daily.data[0].temperatureHigh.toFixed(0);
+    document.getElementById('currentTemp').innerHTML = `${current.temperature.toFixed(0)}&deg;F`;
+   // document.getElementById('').innerHTML = `Feels Like: ${current.apparentTemperature}&deg;F`;
+    document.getElementById('currentIcon').className = `wi wi-${getConditionIcon(current.icon)}`;
+    //document.getElementById('windSpeed').innerText = `Wind: ${current.windSpeed} ${calculateDirection(current.windBearing)}`;
+    document.getElementById('currentLowHigh').innerHTML = `${low}&deg;F / ${high}&deg;F`;
+    document.getElementById('currentPrecip').innerText = `${current.precipProbability * 100}%`;
+    document.getElementById('currentSummary').innerText = current.summary;
 }
 
 function calculateDirection(bearing){
@@ -44,6 +49,19 @@ function calculateDirection(bearing){
         return 'W';
     else if(bearing > 290 && bearing <= 330)
         return 'NW';
+}
+
+function getConditionIcon(icon) {
+    switch(icon) {
+        case 'clear-day':
+            return 'day-sunny';
+        case 'partly-cloudy-day':
+            return 'day-cloudy';
+        case 'partly-cloudy-night':
+            return 'night-cloudy';
+        default:
+            return 'tornado';
+    }
 }
 function getSevenDayForecast() {
 

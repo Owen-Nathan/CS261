@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>What's the Weather?</title>
+    <script src="scripts/DarkSkyAPI.js"></script>
+</head>
+<body onload="getCurrentConditions(); getHourlyForecast()">
+
+<h2>Current Conditions</h2>
+<div id="currentConditionsRow">
+    <h3 id="currentTemperature"></h3>
+    <div id="subConditions">
+        <span id="feelsLike"></span>
+        <span id="windSpeed"></span>
+        <span id="precipitation"></span>
+    </div>
+    <p id="summary"></p>
+</div>
+
+<h2>Hourly Conditions</h2>
+<div id="hourlyConditionsRow">
+
+</div>
+
+
+
+</body>
+</html>

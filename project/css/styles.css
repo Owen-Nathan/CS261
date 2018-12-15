@@ -1,0 +1,73 @@
+.headerBar {
+    background-color: darkblue;
+    color: white;
+    width:100%;
+    height: 75px;
+    line-height: 75px;
+}
+
+.boldInformation{
+    font-size: 50px;
+    font-weight: bold;
+    padding-bottom: 5px;
+    display: block;
+}
+
+.subInformation {
+    padding-top: 5px;
+    font-size:20px;
+
+    display: block;
+}
+
+#mainScreen {
+    padding-top: 25px;
+    height:inherit;
+}
+#topRow {
+    height: 25%;
+}
+
+hr{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border:0;
+    height:1px;
+    background: #333 linear-gradient(to right, #ccc, #333, #ccc);
+}
+.fullHeight{
+    height: 100%;
+}
+.centerText {
+    text-align: center;
+}
+.left {
+    float:left;
+}
+
+.right {
+    float:right;
+}
+
+.half {
+    width: 50%;
+}
+#currentIcon{
+    font-size: 65px;
+    padding-top: 15%;
+
+
+}
+
+#locationName {
+    font-size: 25px;
+    position: relative;
+    vertical-align: center;
+    padding-left: 15px;
+}
+
+html,body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+}

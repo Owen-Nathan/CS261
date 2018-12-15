@@ -2,26 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>What's the Weather?</title>
     <script src="scripts/DarkSkyAPI.js"></script>
+    <link rel="stylesheet" href="css/styles.css"/>
+    <link rel="stylesheet" href="css/weather-icons-wind.min.css">
+    <link rel="stylesheet" href="css/weather-icons.min.css">
 </head>
-<body onload="getCurrentConditions(); getHourlyForecast()">
+<body onload="getCurrentLocation()">
+<div class="headerBar">
+    <span id="locationName">Current Location</span>
+</div>
 
-<h2>Current Conditions</h2>
-<div id="currentConditionsRow">
-    <h3 id="currentTemperature"></h3>
-    <div id="subConditions">
-        <span id="feelsLike"></span>
-        <span id="windSpeed"></span>
-        <span id="precipitation"></span>
+<div id="mainScreen">
+    <div id="topRow">
+        <div class="half left fullHeight centerText" id="leftSideIndicator">
+            <i id="currentIcon" class="wi wi-night-sleet"></i>
+        </div>
+        <div class="half right fullHeight centerText" id="rightSideCurrents">
+            <span class="boldInformation" id="currentTemp">30&deg;F</span>
+            <span class="subInformation" id="currentSummary">Sunny</span>
+            <span class="subInformation" id="currentLowHigh">15&deg;F / 45&deg;F</span>
+            <span class="subInformation" id="currentPrecip">0%</span>
+        </div>
     </div>
-    <p id="summary"></p>
+    <div id="additionalCurrentRow">
+        <div class="half left centerText" id="leftSideFeelsLike">
+            <span class="boldInformation" id="currentFeelsLike">29&deg;F</span>
+            <span class="subInformation">Feels Like</span>
+        </div>
+        <div id="rightSideWind">
+            <span class="boldInformation" id="currentWindSpeed">3 MPH</span>
+            <span class="subInformation">Wind</span>
+        </div>
+    </div>
+
+    <hr>
 </div>
-
-<h2>Hourly Conditions</h2>
-<div id="hourlyConditionsRow">
-
-</div>
-
 </body>
 </html>
