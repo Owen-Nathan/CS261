@@ -8,7 +8,7 @@ function getForecast(coordinates) {
     const Http = new XMLHttpRequest();
     const proxy = 'https://cors-anywhere.herokuapp.com/';
     console.log(coordinates);
-    let url = `${proxy}https://api.darksky.net/forecast/${apiKey}/${coordinates.coords.latitude},${coordinates.coords.longitude}/exclude=minutely`;
+    let url = `${proxy}https://api.darksky.net/forecast/${apiKey}/${coordinates.coords.latitude},${coordinates.coords.longitude}`;
 
     Http.open("GET", url);
     Http.send();
