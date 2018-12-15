@@ -59,7 +59,7 @@ function setMainDisplay(weatherInfo) {
         document.getElementById('currentLowHigh').innerHTML = weatherInfo.lowHigh;
         document.getElementById('currentPrecip').innerText = weatherInfo.precip;
         document.getElementById('currentSummary').innerText = weatherInfo.summary;
-    },1000)
+    },500)
 }
 function calculateDirection(bearing){
     if(bearing > 330 && bearing <= 15)
@@ -118,7 +118,7 @@ function getSevenDayForecast() {
     setTimeout(function() {
         dailyForecastRow.classList.remove('pre-animation');
 
-    },1000)
+    },500)
 
 
 }
@@ -168,7 +168,7 @@ function getHourlyForecast() {
     setTimeout(function() {
         hourlyDivRow.classList.remove('pre-animation');
 
-    },1000)
+    },500)
 }
 
 function getTime(unixTimestamp) {

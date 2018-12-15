@@ -46,7 +46,7 @@
 }
 
 .animated {
-    transition: all 1s;
+    transition: all .5s;
     max-height: 300px;
     opacity: 1;
 }
