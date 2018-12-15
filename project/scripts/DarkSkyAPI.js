@@ -6,8 +6,10 @@
 var apiKey = '67e32fae860a84d534c4b2fa48bc5ffe';
 function getForecast(coordinates) {
     const Http = new XMLHttpRequest();
+    const proxy = 'https://cors-anywhere.herokuapp.com/';
     console.log(coordinates);
-    let url = `https://api.darksky.net/forecast/${apiKey}/${coordinates.coords.latitude},${coordinates.coords.longitude}/exclude=minutely`;
+    let url = `${proxy}https://api.darksky.net/forecast/${apiKey}/${coordinates.coords.latitude},${coordinates.coords.longitude}/exclude=minutely`;
+
     Http.open("GET", url);
     Http.send();
 
