@@ -19,6 +19,7 @@ function getForecast(coordinates) {
             console.log(weatherData);
             getCurrentConditions();
             getHourlyForecast();
+            getSevenDayForecast();
         }
     }
 }
