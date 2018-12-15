@@ -16,6 +16,7 @@ function getForecast(coordinates) {
     Http.onreadystatechange = function () {
         if(this.readyState === 4 && this.status === 200) {
             weatherData = JSON.parse(Http.responseText);
+            console.log(weatherData);
             getCurrentConditions();
             getHourlyForecast();
         }
@@ -29,8 +30,8 @@ function getCurrentConditions() {
     document.getElementById('currentTemp').innerHTML = `${current.temperature.toFixed(0)}&deg;F`;
    document.getElementById('currentFeelsLike').innerHTML = `${current.apparentTemperature.toFixed(0)}&deg;F`;
     document.getElementById('currentIcon').className = `wi wi-${getConditionIcon(current.icon)}`;
-    document.getElementById('currentWindSpeed').innerText = `${current.windSpeed.toFixed(0)} MPH`;
-    document.getElementById('currentLowHigh').innerHTML = `${low}&deg;F / ${high}&deg;F`;
+    document.getElementById('currentWindSpeed').innerHTML = `<i class="wi wi-wind towards-${current.windBearing}-deg"></i> ${current.windSpeed.toFixed(0)} MPH`;
+    document.getElementById('currentLowHigh').innerHTML = `${low}&deg;F <i class="wi wi-direction-down"></i> ${high}&deg;F <i class="wi wi-direction-up"></i>`;
     document.getElementById('currentPrecip').innerText = `${current.precipProbability * 100}%`;
     document.getElementById('currentSummary').innerText = current.summary;
 }
@@ -74,7 +75,19 @@ function getConditionIcon(icon) {
 
 
 function getSevenDayForecast() {
+    let daily = weatherData.daily;
 
+    daily.data.forEach(function(day) {
+        let low = day.temperatureLow.toFixed(0);
+        let high = day.temperatureHigh.toFixed(0);
+        let hourlyDivRow = document.getElementById("dailyForecasts");
+        let hourRow = document.createElement("div");
+        hourRow.className = "forecastItem flexItem";
+        hourRow.innerHTML = `<span class="dayLabel blackBackground">${getDay(day.time)}</span>
+                             <span class="dayTempLabel">${low}&deg;F <i class="wi wi-direction-down"></i> ${high}&deg;F <i class="wi wi-direction-up"></i></span>
+                             <i class="hourlyIcon wi wi-${getConditionIcon(day.icon)}"></i>`;
+        hourlyDivRow.appendChild(hourRow);
+    });
 }
 
 /*
@@ -92,11 +105,12 @@ function getHourlyForecast() {
     hourly.data.forEach(function(hour) {
        let hourlyDivRow = document.getElementById("hourlyConditions");
         let hourRow = document.createElement("div");
-        hourRow.className = "conditionItem";
-        hourRow.innerHTML = `<span class="hourLabel">${getTime(hour.time)}</span>
+        hourRow.className = "conditionItem flexItem";
+        hourRow.innerHTML = `<span class="hourLabel blackBackground">${getTime(hour.time)}</span>
                              <span class="tempLabel">${hour.temperature.toFixed(0)}&deg;F</span>
                              <i class="hourlyIcon wi wi-${getConditionIcon(hourly.icon)}"></i>
-                             <span class="hourPrecip">${(hour.precipProbability * 100).toFixed(0)} <i class="wi wi-humidity"/></span>`;
+                             <span class="hourPrecip">${(hour.precipProbability * 100).toFixed(0)} <i class="wi wi-humidity"></i></span>
+                             <span class="hourPrecip"><i class="wi wi-wind towards-${hour.windBearing}-deg"></i> ${hour.windSpeed.toFixed(0)}<br>mph</span>`;
         hourlyDivRow.appendChild(hourRow);
     });
 
@@ -106,6 +120,11 @@ function getTime(unixTimestamp) {
     let date = new Date(unixTimestamp * 1000);
 
     return date.toLocaleString('en-US', {hour: 'numeric', hour12: true});
+}
+
+function getDay(unixTimestamp) {
+    let date = new Date(unixTimestamp * 1000);
+    return date.toLocaleString('en-US', {weekday: 'short'});
 }
 
 function getCurrentLocation() {

@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/weather-icons-wind.min.css">
     <link rel="stylesheet" href="css/weather-icons.min.css">
 </head>
-<body onload="getCurrentLocation()">
+<body onload="getCurrentConditions();getHourlyForecast();getSevenDayForecast()">
 <div class="headerBar">
     <span id="locationName">Current Location</span>
 </div>
@@ -41,7 +41,13 @@
 
     <div id="hourlyRow">
         <span class="mediumInformation">Hourly</span>
-        <div id="hourlyConditions">
+        <div class="scrollingContent" id="hourlyConditions">
+        </div>
+    </div>
+
+    <div id="forecastRow">
+        <div class="scrollingContent" id="dailyForecasts">
+
         </div>
     </div>
 

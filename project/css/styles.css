@@ -38,16 +38,23 @@
     height:25%;
     margin: 0 15px;
 }
+#forecastRow {
+    height: 15%;
+    margin:  15px;
+    padding-top: 15%;
+}
 #additionalCurrentRow {
     height: 10%;
 }
 
-#hourlyConditions {
+.scrollingContent {
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
+    overflow-y: hidden;
     -webkit-overflow-scrolling: touch;
     height: 100%;
+    margin-top:2%
 }
 
 .hourlyIcon {
@@ -55,16 +62,23 @@
     padding-top: 20%;
 }
 .conditionItem {
-    flex: 0 0 auto;
     border: 1px solid;
     width: 19%;
     text-align: center;
     height: 95%;
     margin-bottom: 5px;
 }
+.flexItem{
+    flex: 0 0 auto;
+}
+.forecastItem {
+    border: 1px solid;
+    width:25%;
+    text-align: center;
+    height:95%;
+    margin-bottom: 5px;
+}
 .hourLabel {
-    background-color: black;
-    color: white;
     display: block;
     width: 100%;
     height:12%;
@@ -74,7 +88,22 @@
     padding-top: 15%;
     font-size: 18px;
 }
+.blackBackground
+{
+    background-color: black;
+    color: white;
+}
+.dayLabel {
+    display: block;
+    width: 100%;
+    height:15%;
+}
 
+.dayTempLabel {
+    display: block;
+    padding-top: 15%;
+    font-size: 13px;
+}
 .hourPrecip {
     display: block;
     padding-top: 15%;
