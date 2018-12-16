@@ -161,13 +161,25 @@ hr{
     height: 50%;
     width:75%;
     background-color: transparent;
-    border: none;
+    border-bottom: solid #eeeeee 1px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
     color: white;
     font-size: 20px;
     outline: none;
+}
 
+.linear-wipe{
+    white-space: nowrap;
+    overflow: hidden;
+    animation: linearwipe .5s steps(100, end);
+    opacity: 1;
+    width: 0;
+}
 
-
+@keyframes linearwipe{
+    from { width: 0;opacity: 0 }
 }
 #locationName {
     font-size: 25px;
