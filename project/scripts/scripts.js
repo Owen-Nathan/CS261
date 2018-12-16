@@ -103,6 +103,7 @@ function getConditionIcon(icon) {
 function getSevenDayForecast() {
     let daily = weatherData.daily;
     let dailyForecastRow = document.getElementById("dailyForecasts");
+    dailyForecastRow.innerHTML = '';
     dailyForecastRow.classList.add('pre-animation');
     daily.data.forEach(function(day,index,array) {
         let low = day.temperatureLow.toFixed(0);
@@ -124,20 +125,11 @@ function getSevenDayForecast() {
 
 }
 
-/*
-            <div class="conditionItem">
-                <span class="hourLabel">7 PM</span>
-                <span class="tempLabel">30&deg;F</span>
-                <i class="hourlyIcon wi wi-rain"></i>
-            </div>
-            <span>Feels Like: ${hour.apparentTemperature}&deg;F</span>
-                             <span>Wind: ${hour.windSpeed} ${calculateDirection(hour.windBearing)}</span>
-                             <span>Precip: ${(hour.precipProbability * 100).toFixed(0)}%</span><br>
- */
 function getHourlyForecast() {
     let hourly = weatherData.hourly;
     let hourlyDivRow = document.getElementById("hourlyConditions");
     hourlyDivRow.classList.add('pre-animation');
+    hourlyDivRow.innerHTML = '';
 
     hourly.data.forEach(function(hour) {
 
@@ -190,6 +182,52 @@ function getCurrentLocation() {
         return {latitude: 0, longitude: 0};
     }
 }
+
+function showSearchBar() {
+    let locationName = document.getElementById('locationName');
+    locationName.classList.add('hidden');
+
+    let searchBox = document.getElementById('searchBox');
+    searchBox.classList.remove('hidden');
+    searchBox.focus();
+    searchBox.onblur = function () {
+        locationName.classList.remove('hidden');
+        searchBox.classList.add('hidden');
+    }
+}
+
+function insertGoogleScript() {
+    var google_api = document.createElement('script'),
+        api_key    = 'AIzaSyC8YCaLdQcdWDF5cRrjWSvWWvA-oCXPJFw';
+
+    // Inject the script for Google's API and reference the initGoogleAPI
+    // function as a callback.
+    google_api.src = 'https://maps.googleapis.com/maps/api/js?key='+ api_key +'&callback=initGoogleAPI&libraries=places,geometry';
+    document.body.appendChild(google_api);
+}
+
+
+// SearchBox Method
+function initGoogleAPI() {
+    var autocomplete = new google.maps.places.SearchBox(document.getElementById('searchBox'));
+    autocomplete.addListener('places_changed', function() {
+        var place = autocomplete.getPlaces()[0];
+        console.log(place.geometry.location.lat());
+        console.log(place.geometry.location.lng());
+        console.log(place);
+        let locationName = document.getElementById('locationName');
+        locationName.innerText = place.formatted_address;
+        getForecast({coords : {
+            latitude: place.geometry.location.lat(),
+            longitude: place.geometry.location.lng()
+        }});
+
+    });
+}
+
+insertGoogleScript();
+
+
 
 var weatherData =
     {

@@ -4,14 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>What's the Weather?</title>
-    <script src="scripts/DarkSkyAPI.js"></script>
+
+
     <link rel="stylesheet" href="css/styles.css"/>
     <link rel="stylesheet" href="css/weather-icons-wind.min.css">
     <link rel="stylesheet" href="css/weather-icons.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
 </head>
-<body onload="getCurrentLocation()">
+<body onload="getCurrentConditions();getHourlyForecast();getSevenDayForecast()">
 <div class="headerBar">
+    <input id="searchBox" class="hidden" placeholder="Enter a Location">
     <span id="locationName">Current Location</span>
+    <div class="right" id="search">
+        <i class="material-icons" onclick="showSearchBar()">search</i>
+    </div>
 </div>
 
 <div id="mainScreen">
@@ -41,17 +48,17 @@
     <hr>
 
     <div id="hourlyRow" class="">
-        <span class="mediumInformation">Hourly</span>
         <div class="scrollingContent animated" id="hourlyConditions">
         </div>
     </div>
 
+    <footer>
     <div id="forecastRow" >
         <div class="scrollingContent animated" id="dailyForecasts" >
-
         </div>
     </div>
+    </footer>
 </div>
 </body>
-
+<script src="scripts/scripts.js"></script>
 </html>

@@ -28,18 +28,17 @@
 
 #mainScreen {
     padding-top: 25px;
-    height:inherit;
+    height:80%;
 }
 #topRow {
-    height: 25%;
+    height: 35%;
 }
 
 #hourlyRow {
-    height:25%;
+    height:35%;
 }
 #forecastRow {
-    height: 15%;
-    padding-top: 15%;
+    height: 20%;
 }
 #additionalCurrentRow {
     height: 10%;
@@ -117,9 +116,18 @@
     padding-top: 15%;
     font-size: 15px;
 }
+
+.hidden {
+    display: none;
+}
+#search {
+    padding: 5px;
+    transition: 1s all;
+}
+
 hr{
-    margin-top: 15px;
-    margin-bottom: 15px;
+    margin-top: 5%;
+    margin-bottom: 5%;
     border:0;
     height:1px;
     background: #333 linear-gradient(to right, #ccc, #333, #ccc);
@@ -148,6 +156,19 @@ hr{
 
 }
 
+#searchBox {
+    margin-left: 15px;
+    height: 50%;
+    width:75%;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    outline: none;
+
+
+
+}
 #locationName {
     font-size: 25px;
     position: relative;
@@ -159,4 +180,13 @@ html,body {
     margin: 0;
     font-family: Helvetica, sans-serif;
     height: 100%;
+}
+
+::placeholder {
+    color: white;
+    opacity: 1;
+}
+footer {
+    position: absolute;
+    bottom: 0;
 }
